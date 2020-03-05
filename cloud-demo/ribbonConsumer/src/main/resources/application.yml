@@ -1,0 +1,19 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:1111/eureka/
+server:
+  port: 1114
+spring:
+  application:
+    name: ribbon-consumer
+feign:
+  hystrix:
+    enabled: true #允许feign使用hystrix
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 50 #降级默认超时时间
